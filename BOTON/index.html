@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contador de Clics</title>
+<link rel="stylesheet" type="text/css" href="app.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 100px;
+    padding: 100px;
+    background-color: black;
+    color: white;
+  }
+  #contador {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <h1><em>Contador de Clics<br>Musica relajante</em></h1>
+  <button id="boton">Haz clic <br><em>TatanBaph IT ®</em> </button>
+  <p id="contador">Clics: 0</p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/bz5q5gl2uZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+  <script>
+    // Obtener referencias a los elementos
+    const boton = document.getElementById("boton");
+    const contador = document.getElementById("contador");
+    const videoIframe = document.querySelector("iframe");
+
+    let clics = 0;
+
+    // Agregar un evento al botón
+    boton.addEventListener("click", () => {
+      clics++;
+      contador.textContent = `Clics: ${clics}`;
+
+      if (clics === 1) {
+        // Reproducir el video cuando se hace el primer clic
+        videoIframe.src += "?autoplay=1";
+      }
+    });
+  </script>
+</body>
+</html>
